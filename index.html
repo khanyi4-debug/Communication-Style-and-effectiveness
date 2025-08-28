@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workplace Communication Questionnaire</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+    #submitBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #chartContainer {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+    #tips {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Workplace Communication Questionnaire</h1>
+<p>Please answer honestly. Your results will show your communication style in the workplace and give personalized tips.</p>
+
+<form id="questionnaire">
+  <!-- Question 1 -->
+  <div class="question">
+    <label>1. When sharing ideas, I usually:</label>
+    <input type="radio" name="q1" value="assertive" required> Speak confidently and directly (Assertive)<br>
+    <input type="radio" name="q1" value="reflective"> Listen first and then share my thoughts (Reflective)<br>
+    <input type="radio" name="q1" value="passive"> Avoid conflict or confrontation (Passive)<br>
+    <input type="radio" name="q1" value="aggressive"> Express my ideas passionately, sometimes overpowering others (Aggressive)
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <label>2. When receiving feedback, I:</label>
+    <input type="radio" name="q2" value="assertive" required> Welcome it and act on it immediately (Assertive)<br>
+    <input type="radio" name="q2" value="reflective"> Consider it carefully before responding (Reflective)<br>
+    <input type="radio" name="q2" value="passive"> Feel uncomfortable but try to remain polite (Passive)<br>
+    <input type="radio" name="q2" value="aggressive"> Feel defensive and tend to justify my actions (Aggressive)
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <label>3. In team discussions, I tend to:</label>
+    <input type="radio" name="q3" value="assertive" required> Take the lead and guide the conversation (Assertive)<br>
+    <input type="radio" name="q3" value="reflective"> Contribute ideas when asked (Reflective)<br>
+    <input type="radio" name="q3" value="passive"> Listen more than speak (Passive)<br>
+    <input type="radio" name="q3" value="aggressive"> Challenge others to express my viewpoint (Aggressive)
+  </div>
+
+  <button type="button" id="submitBtn">Submit</button>
+</form>
+
+<div id="chartContainer">
+  <h2>Your Communication Style</h2>
+  <canvas id="styleChart" width="400" height="400"></canvas>
+  <div id="tips"></div>
+</div>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const form = document.getElementById('questionnaire');
+  const formData = new FormData(form);
+  let scores = { assertive: 0, reflective: 0, passive: 0, aggressive: 0 };
+
+  for (let [key, value] of formData.entries()) {
+    scores[value]++;
+  }
+
+  // Hide form and show chart
+  form.style.display = 'none';
+  document.getElementById('chartContainer').style.display = 'block';
+
+  // Create pie chart
+  const ctx = document.getElementById('styleChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Assertive', 'Reflective', 'Passive', 'Aggressive'],
+      datasets: [{
+        data: [scores.assertive, scores.reflective, scores.passive, scores.aggressive],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.7)',
+          'rgba(75, 192, 192, 0.7)',
+          'rgba(255, 206, 86, 0.7)',
+          'rgba(255, 99, 132, 0.7)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // Determine top style
+  const topStyle = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
+  let tipText = "";
+
+  if(topStyle === "assertive") {
+    tipText = "Your strength is clear, confident communication. Continue speaking up and giving feedback, but remember to actively listen to others.";
+  } else if(topStyle === "reflective") {
+    tipText = "You are thoughtful and considerate in communication. Leverage this strength while practicing more direct expression when needed.";
+  } else if(topStyle === "passive") {
+    tipText = "You tend to avoid conflict and may hold back your ideas. Work on expressing your thoughts assertively and engaging in discussions.";
+  } else if(topStyle === "aggressive") {
+    tipText = "You are passionate and expressive, but may overpower others. Practice balancing your communication by listening actively and moderating your tone.";
+  }
+
+  document.getElementById('tips').innerText = tipText;
+});
+</script>
+
+</body>
+</html>
