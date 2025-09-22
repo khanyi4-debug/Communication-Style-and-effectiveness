@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
       padding: 20px;
     }
@@ -43,37 +43,187 @@
 <body>
 
 <h1>Workplace Communication Questionnaire</h1>
-<p>Please answer honestly. Your results will show your communication style in the workplace and give personalized tips.</p>
+<p>Answer honestly. Your results will show your workplace and classroom communication style and give personalized tips.</p>
 
 <form id="questionnaire">
-  <!-- Question 1 -->
-  <div class="question">
-    <label>1. When sharing ideas, I usually:</label>
-    <input type="radio" name="q1" value="assertive" required> Speak confidently and directly (Assertive)<br>
-    <input type="radio" name="q1" value="reflective"> Listen first and then share my thoughts (Reflective)<br>
-    <input type="radio" name="q1" value="passive"> Avoid conflict or confrontation (Passive)<br>
-    <input type="radio" name="q1" value="aggressive"> Express my ideas passionately, sometimes overpowering others (Aggressive)
-  </div>
 
-  <!-- Question 2 -->
-  <div class="question">
-    <label>2. When receiving feedback, I:</label>
-    <input type="radio" name="q2" value="assertive" required> Welcome it and act on it immediately (Assertive)<br>
-    <input type="radio" name="q2" value="reflective"> Consider it carefully before responding (Reflective)<br>
-    <input type="radio" name="q2" value="passive"> Feel uncomfortable but try to remain polite (Passive)<br>
-    <input type="radio" name="q2" value="aggressive"> Feel defensive and tend to justify my actions (Aggressive)
-  </div>
+<!-- Questions -->
+<!-- Section 1 -->
+<div class="question">
+  <label>1. In a team meeting, you have an idea to share.</label>
+  <input type="radio" name="q1" value="assertive" required> Speak immediately to ensure your point is heard.<br>
+  <input type="radio" name="q1" value="reflective"> Wait until others finish speaking and then share thoughtfully.<br>
+  <input type="radio" name="q1" value="passive"> Hesitate to speak and hope someone else mentions a similar idea.<br>
+  <input type="radio" name="q1" value="aggressive"> Speak strongly, even if it interrupts others.
+</div>
 
-  <!-- Question 3 -->
-  <div class="question">
-    <label>3. In team discussions, I tend to:</label>
-    <input type="radio" name="q3" value="assertive" required> Take the lead and guide the conversation (Assertive)<br>
-    <input type="radio" name="q3" value="reflective"> Contribute ideas when asked (Reflective)<br>
-    <input type="radio" name="q3" value="passive"> Listen more than speak (Passive)<br>
-    <input type="radio" name="q3" value="aggressive"> Challenge others to express my viewpoint (Aggressive)
-  </div>
+<div class="question">
+  <label>2. When asked to present a project in class or at work:</label>
+  <input type="radio" name="q2" value="assertive" required> Prepare carefully and present confidently.<br>
+  <input type="radio" name="q2" value="reflective"> Take time to reflect before presenting.<br>
+  <input type="radio" name="q2" value="passive"> Try to avoid presenting or let someone else go first.<br>
+  <input type="radio" name="q2" value="aggressive"> Present quickly and passionately, focusing on your points.
+</div>
 
-  <button type="button" id="submitBtn">Submit</button>
+<div class="question">
+  <label>3. During group discussions, if someone disagrees with you:</label>
+  <input type="radio" name="q3" value="assertive" required> Calmly explain your reasoning.<br>
+  <input type="radio" name="q3" value="reflective"> Consider their perspective before responding.<br>
+  <input type="radio" name="q3" value="passive"> Stay quiet and avoid conflict.<br>
+  <input type="radio" name="q3" value="aggressive"> Argue your point strongly to make your perspective dominate.
+</div>
+
+<!-- Section 2 -->
+<div class="question">
+  <label>4. A colleague or classmate is explaining a complex idea.</label>
+  <input type="radio" name="q4" value="assertive" required> Listen attentively and ask clarifying questions.<br>
+  <input type="radio" name="q4" value="reflective"> Reflect on what they said before responding.<br>
+  <input type="radio" name="q4" value="passive"> Nod politely but don’t engage.<br>
+  <input type="radio" name="q4" value="aggressive"> Interrupt to explain why your way is better.
+</div>
+
+<div class="question">
+  <label>5. When receiving constructive criticism:</label>
+  <input type="radio" name="q5" value="assertive" required> Accept it and apply suggestions.<br>
+  <input type="radio" name="q5" value="reflective"> Think carefully about the feedback before responding.<br>
+  <input type="radio" name="q5" value="passive"> Feel uncomfortable but avoid confrontation.<br>
+  <input type="radio" name="q5" value="aggressive"> React defensively or justify yourself.
+</div>
+
+<div class="question">
+  <label>6. You notice a teammate making a mistake in a project.</label>
+  <input type="radio" name="q6" value="assertive" required> Politely point it out and suggest a correction.<br>
+  <input type="radio" name="q6" value="reflective"> Think about how best to mention it later.<br>
+  <input type="radio" name="q6" value="passive"> Ignore it and fix it yourself.<br>
+  <input type="radio" name="q6" value="aggressive"> Criticize them openly so they understand.
+</div>
+
+<!-- Section 3 -->
+<div class="question">
+  <label>7. Two colleagues are arguing in a meeting.</label>
+  <input type="radio" name="q7" value="assertive" required> Mediate calmly and find a solution.<br>
+  <input type="radio" name="q7" value="reflective"> Wait and observe before getting involved.<br>
+  <input type="radio" name="q7" value="passive"> Stay out of it completely.<br>
+  <input type="radio" name="q7" value="aggressive"> Pick a side and argue aggressively.
+</div>
+
+<div class="question">
+  <label>8. Someone disagrees strongly with your idea.</label>
+  <input type="radio" name="q8" value="assertive" required> Listen and clarify respectfully.<br>
+  <input type="radio" name="q8" value="reflective"> Reflect before responding.<br>
+  <input type="radio" name="q8" value="passive"> Avoid responding directly.<br>
+  <input type="radio" name="q8" value="aggressive"> Push your idea strongly.
+</div>
+
+<div class="question">
+  <label>9. A team member repeatedly interrupts you.</label>
+  <input type="radio" name="q9" value="assertive" required> Assertively ask to finish.<br>
+  <input type="radio" name="q9" value="reflective"> Consider why before responding.<br>
+  <input type="radio" name="q9" value="passive"> Say nothing.<br>
+  <input type="radio" name="q9" value="aggressive"> Confront forcefully.
+</div>
+
+<!-- Section 4 -->
+<div class="question">
+  <label>10. You are assigned a group project.</label>
+  <input type="radio" name="q10" value="assertive" required> Take initiative and delegate tasks.<br>
+  <input type="radio" name="q10" value="reflective"> Contribute thoughtfully and support others.<br>
+  <input type="radio" name="q10" value="passive"> Wait for instructions.<br>
+  <input type="radio" name="q10" value="aggressive"> Push for your ideas to dominate.
+</div>
+
+<div class="question">
+  <label>11. A teammate is not contributing.</label>
+  <input type="radio" name="q11" value="assertive" required> Address it professionally and offer support.<br>
+  <input type="radio" name="q11" value="reflective"> Observe and understand their situation.<br>
+  <input type="radio" name="q11" value="passive"> Do the work yourself.<br>
+  <input type="radio" name="q11" value="aggressive"> Call them out strongly.
+</div>
+
+<div class="question">
+  <label>12. You need to negotiate a deadline or task adjustment.</label>
+  <input type="radio" name="q12" value="assertive" required> Present reasoning clearly and request politely.<br>
+  <input type="radio" name="q12" value="reflective"> Plan carefully before asking.<br>
+  <input type="radio" name="q12" value="passive"> Avoid negotiating.<br>
+  <input type="radio" name="q12" value="aggressive"> Demand the change assertively.
+</div>
+
+<!-- Section 5 -->
+<div class="question">
+  <label>13. You need to send an email requesting help.</label>
+  <input type="radio" name="q13" value="assertive" required> Write clearly and politely.<br>
+  <input type="radio" name="q13" value="reflective"> Carefully draft and revise before sending.<br>
+  <input type="radio" name="q13" value="passive"> Hesitate or avoid sending.<br>
+  <input type="radio" name="q13" value="aggressive"> Write a demanding email emphasizing urgency.
+</div>
+
+<div class="question">
+  <label>14. You receive a confusing email from a colleague.</label>
+  <input type="radio" name="q14" value="assertive" required> Ask clarifying questions politely.<br>
+  <input type="radio" name="q14" value="reflective"> Think carefully about how to interpret it.<br>
+  <input type="radio" name="q14" value="passive"> Ignore parts you don’t understand.<br>
+  <input type="radio" name="q14" value="aggressive"> Respond quickly, pointing out the confusion firmly.
+</div>
+
+<div class="question">
+  <label>15. You are asked to write a report summarizing team progress.</label>
+  <input type="radio" name="q15" value="assertive" required> Clearly organize your thoughts professionally.<br>
+  <input type="radio" name="q15" value="reflective"> Take your time reflecting to ensure accuracy.<br>
+  <input type="radio" name="q15" value="passive"> Provide minimal detail to finish quickly.<br>
+  <input type="radio" name="q15" value="aggressive"> Emphasize your own contributions.
+</div>
+
+<!-- Section 6 -->
+<div class="question">
+  <label>16. You are working with a culturally diverse team.</label>
+  <input type="radio" name="q16" value="assertive" required> Adapt communication to respect differences.<br>
+  <input type="radio" name="q16" value="reflective"> Observe and reflect on how to communicate best.<br>
+  <input type="radio" name="q16" value="passive"> Avoid engaging with differing perspectives.<br>
+  <input type="radio" name="q16" value="aggressive"> Push your own communication style regardless.
+</div>
+
+<div class="question">
+  <label>17. A teammate makes a comment you find inappropriate.</label>
+  <input type="radio" name="q17" value="assertive" required> Address it respectfully and explain why.<br>
+  <input type="radio" name="q17" value="reflective"> Reflect before responding.<br>
+  <input type="radio" name="q17" value="passive"> Stay quiet to avoid confrontation.<br>
+  <input type="radio" name="q17" value="aggressive"> Respond strongly and confront.
+</div>
+
+<!-- Section 7 -->
+<div class="question">
+  <label>18. In a class discussion, the professor asks a question.</label>
+  <input type="radio" name="q18" value="assertive" required> Answer confidently and clearly.<br>
+  <input type="radio" name="q18" value="reflective"> Think carefully before responding.<br>
+  <input type="radio" name="q18" value="passive"> Stay silent.<br>
+  <input type="radio" name="q18" value="aggressive"> Respond to assert dominance.
+</div>
+
+<div class="question">
+  <label>19. You are assigned to lead a study group.</label>
+  <input type="radio" name="q19" value="assertive" required> Organize tasks and guide discussion professionally.<br>
+  <input type="radio" name="q19" value="reflective"> Facilitate discussion thoughtfully.<br>
+  <input type="radio" name="q19" value="passive"> Let others take control.<br>
+  <input type="radio" name="q19" value="aggressive"> Push your ideas forcefully.
+</div>
+
+<div class="question">
+  <label>20. During peer review, you need to give feedback.</label>
+  <input type="radio" name="q20" value="assertive" required> Offer constructive suggestions tactfully.<br>
+  <input type="radio" name="q20" value="reflective"> Consider the peer’s feelings carefully.<br>
+  <input type="radio" name="q20" value="passive"> Give minimal feedback.<br>
+  <input type="radio" name="q20" value="aggressive"> Critique them strongly.
+</div>
+
+<div class="question">
+  <label>21. When a classmate disagrees with your opinion:</label>
+  <input type="radio" name="q21" value="assertive" required> Engage respectfully and listen.<br>
+  <input type="radio" name="q21" value="reflective"> Reflect before responding.<br>
+  <input type="radio" name="q21" value="passive"> Avoid arguing and stay silent.<br>
+  <input type="radio" name="q21" value="aggressive"> Argue assertively.
+</div>
+
+<button type="button" id="submitBtn">Submit</button>
 </form>
 
 <div id="chartContainer">
@@ -92,11 +242,10 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     scores[value]++;
   }
 
-  // Hide form and show chart
   form.style.display = 'none';
   document.getElementById('chartContainer').style.display = 'block';
 
-  // Create pie chart
+  // Pie chart
   const ctx = document.getElementById('styleChart').getContext('2d');
   new Chart(ctx, {
     type: 'pie',
@@ -116,18 +265,17 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     options: { responsive: true }
   });
 
-  // Determine top style
+  // Determine dominant style
   const topStyle = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
   let tipText = "";
-
   if(topStyle === "assertive") {
-    tipText = "Your strength is clear, confident communication. Continue speaking up and giving feedback, but remember to actively listen to others.";
+    tipText = "You communicate clearly and confidently. Continue speaking up and giving feedback, but remember to actively listen to others.";
   } else if(topStyle === "reflective") {
-    tipText = "You are thoughtful and considerate in communication. Leverage this strength while practicing more direct expression when needed.";
+    tipText = "You are thoughtful and considerate. Leverage this while practicing more direct expression when needed.";
   } else if(topStyle === "passive") {
-    tipText = "You tend to avoid conflict and may hold back your ideas. Work on expressing your thoughts assertively and engaging in discussions.";
+    tipText = "You may hold back your ideas. Work on expressing your thoughts assertively and engaging in discussions.";
   } else if(topStyle === "aggressive") {
-    tipText = "You are passionate and expressive, but may overpower others. Practice balancing your communication by listening actively and moderating your tone.";
+    tipText = "You are passionate and expressive, but may overpower others. Practice listening actively and moderating your tone.";
   }
 
   document.getElementById('tips').innerText = tipText;
